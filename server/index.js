@@ -5,10 +5,12 @@ const path = require("path");
 
 app.use("/", express.static(path.resolve(__dirname, "../client")));
 
-const myServer = app.listen(9876); // regular http server using node express which serves your webpage
+const port = process.env.PORT; // 9876
+const myServer = app.listen(port); // regular http server using node express which serves your webpage
 
 const wsServer = new WebSocket.Server({
-  noServer: true,
+  // noServer: true,
+  server: myServer,
 }); // a websocket server
 
 wsServer.on("connection", function (ws) {

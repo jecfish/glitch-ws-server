@@ -1,4 +1,6 @@
-const url = "ws://localhost:9876/myWebsocket";
+
+const url = "wss://g-websocket-server.glitch.me/myWebsocket";
+// const url = "ws://localhost:9876/myWebsocket";
 const mywsServer = new WebSocket(url);
 
 //DOM Elements
